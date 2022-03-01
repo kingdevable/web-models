@@ -175,13 +175,13 @@ class Model extends React.Component {
             const smokeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff, map: _texture, transparent: true, alphaMap:_texture, opacity:0.5 });
             // const smokeMaterial = createMaterial(_texture);
             smokeMaterial.map.minFilter = THREE.LinearFilter;
-            const smokeGeometry = new THREE.PlaneBufferGeometry(500, 500);
+            const smokeGeometry = new THREE.PlaneBufferGeometry(100, 100);
             const smokeMeshes = [];
             let limit = 150;
             while (limit--) {
                 smokeMeshes[limit] = new THREE.Mesh(smokeGeometry, smokeMaterial);
-                smokeMeshes[limit].position.set(Math.random() * 500 - 250, Math.random() * 500 - 250, Math.random() * 200 - 150);
-                smokeMeshes[limit].rotation.z = Math.random() * 360;
+                smokeMeshes[limit].position.set(Math.random() * 150 - 75, Math.random() * 80 - 30, Math.random() * 200 - 200);
+                // smokeMeshes[limit].rotation.z = Math.random() * 360;
                 this.smokeParticles.push(smokeMeshes[limit]);
                 this.scene.add(smokeMeshes[limit]);
             }
@@ -200,7 +200,7 @@ class Model extends React.Component {
     evolveSmoke = (delta) =>{            
         let smokeParticlesLength = this.smokeParticles.length;
         while (smokeParticlesLength--) {
-            this.smokeParticles[smokeParticlesLength].rotation.z += delta * 0.2;
+            this.smokeParticles[smokeParticlesLength].rotation.z += delta * 0.1;
         }
     }
     animate = () => {
