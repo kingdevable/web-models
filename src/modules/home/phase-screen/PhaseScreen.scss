@@ -1,0 +1,118 @@
+@import '../../../scss/__mixin';
+
+.phase-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  flex: 1;
+  background: white;
+  transition: all 2s;
+  overflow: scroll;
+  --middle-line-position: 50%;
+  --middle-line-width: 4px;
+  @include isMobile(){
+    --middle-line-position: 10%;
+  }
+
+  .middle-line {
+    height: 100%;
+    width: var(--middle-line-width);
+    transition: height 3s;
+    position: absolute;
+    left: calc(var(--middle-line-position) - calc(var(--middle-line-width) / 2));
+    top: 0;
+    background: black;
+  }
+
+  .phase {
+    --center-image-width: 48px;
+    opacity: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100vw;
+    max-width: 1800px;
+    background-size: var(--center-image-width) auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.5s;
+    background-image: url('../../../../public/images/phase-screen/phase-tracker.svg');
+    @include isMobile(){
+      background-position: calc(var(--middle-line-position) - calc(var(--center-image-width)/2) + calc(var(--middle-line-width)) + 1px) center;
+      width: 100%;
+      display: block;
+      margin-bottom: 110px;
+    }
+
+    &.phase-1{
+      margin-top: 100px;
+      .left-container{
+        @include isMobile(){
+          margin-top: 50px;
+        }
+      }
+    }
+
+    .header1 {
+      margin-bottom: 30px;
+      font-size: 60px;
+      margin-top: 0px;
+      @include maxMedia(1250px){
+        font-size: 50px;
+      }
+      @include maxMedia(1150px){
+        font-size: 40px;
+      }
+      @include isMobile(){
+        font-size: 50px;
+      }
+    }
+
+    .sub-header{
+      @include isMobile(){
+        font-size: 25px;
+        font-weight: 300;
+        max-width: 370px;
+      }
+    }
+
+    .left-container, .right-container {
+      margin: 0px 5vw;
+      position: relative;
+      flex: 1;
+      min-width: 1px;
+    }
+
+    .left-container, .right-container{
+      @include isMobile(){
+        position: relative;
+        left: 17%;
+        margin-right: 0px;
+        margin-left: 0px;
+        width: 75%;
+      }
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 50px;
+      @include isMobile(){
+        width: 100px;
+      }
+
+      &.floating-img {
+        position: relative;
+        top: -130px;
+        left: 150px;
+        @include isMobile(){
+          top: 80px;
+          left: -50px;
+        }
+      }
+    }
+  }
+}

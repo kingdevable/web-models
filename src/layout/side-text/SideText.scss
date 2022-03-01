@@ -1,0 +1,21 @@
+@import '../../scss/__mixin.scss';
+.side-text{
+    --font-size: 15px;
+    --padding-left: 38px;
+    transition: color 2s;
+    font-family: Helvetica Neue;
+    font-size: var(--font-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    transform: rotate(90deg);
+    position: fixed;
+    top: calc(50vh - calc(var(--font-size) *2));
+    width: 100vh;
+    left: calc(100vw - 50vh - var(--font-size) - var(--padding-left));
+    @include breakpoint(tablet-and-lower){
+        --font-size: 10px;
+        --padding-left: 10px;
+    }
+}

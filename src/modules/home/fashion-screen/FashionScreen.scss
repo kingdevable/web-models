@@ -1,0 +1,70 @@
+@import '../../../scss/__mixin';
+
+.fashion-screen {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex: 1;
+
+  .images-container {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+
+    .column {
+      position: relative;
+      width: 33.33%;
+
+      &.column1 img {
+        transition: all 0.8s;
+      }
+
+      &.column2 img {
+        transition: all 1s;
+      }
+
+      &.column3 img {
+        transition: all 1.2s;
+      }
+
+      img {
+        position: relative;
+        z-index: 1;
+        max-width: 100%
+      }
+    }
+  }
+
+  .text-container {
+    position: absolute;
+    width: 100vw;
+    top: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-right: 25%;
+    @include isMobile() {
+      width: 80vw;
+      padding: 10vw;
+    }
+
+    .text-content {
+      position: sticky;
+      width: 450px;
+      padding-top: 125px;
+      padding-bottom: 350px;
+      top: 0px;
+      z-index: 100;
+
+      .header1 {
+        margin-bottom: 0px;
+        //background: var(--white-background);
+        background: var(--white-background-with-opacity);
+        @include isMobile() {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}

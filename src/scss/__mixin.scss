@@ -1,0 +1,124 @@
+$bp-mobile-break: 1023px !default;
+$bp-small: 320px !default;
+$bp-medium: 680px !default;
+$bp-medium-high: 960px !default;
+$bp-1024: 1024px !default;
+$bp-large: 1200px !default;
+$bp-xlarge: 1440px !default;
+$bp-homepage-max: 2000px !default;
+$margin-small: 20px !default;
+$margin-medium: 62px !default;
+$margin-medium-high: 62px !default;
+$margin-large: 80px !default;
+
+$gutter-small: 14px !default;
+$gutter-medium: 16px !default;
+$gutter-medium-high: 24px !default;
+$gutter-large: 32px !default;
+$header-color: red;
+
+@mixin hideScrollBar(){
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+//.container::-webkit-scrollbar {
+//  display: none;  /* Safari and Chrome */
+//}
+
+@mixin isMobile(){
+  @media (max-width: $bp-mobile-break) {
+    @content;
+  }
+}
+
+
+@mixin minMedia($breakpoint){
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin maxMedia($breakpoint){
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin minMaxMedia($minBreakPoint, $maxBreakPoint){
+  @media (min-width: $minBreakPoint) and (max-width: $maxBreakPoint) {
+    @content;
+  }
+}
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == 'small-only-iphone' {
+    @media (max-width: $bp-small) {
+      @content;
+    }
+  } @else if $breakpoint == 'small-only' {
+    @media (max-width: $bp-medium - 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium' {
+    @media (min-width: $bp-medium) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium-print' {
+    @media print, (min-width: $bp-medium) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet-and-lower' {
+    @media (max-width: $bp-medium) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet' {
+    @media (min-width: $bp-medium) and (max-width: $bp-1024 - 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium-only' {
+    @media (min-width: $bp-medium) and (max-width: $bp-medium-high - 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium-and-lower' {
+    @media (max-width: $bp-medium-high - 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium-high' {
+    @media (min-width: $bp-medium-high) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium-high-only' {
+    @media (min-width: $bp-medium-high) and (max-width: $bp-large - 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium-high-and-lower' {
+    @media (max-width: $bp-large - 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium-high-print' {
+    @media print, (min-width: $bp-medium-high) {
+      @content;
+    }
+  } @else if $breakpoint == 'large' {
+    @media (min-width: $bp-large) {
+      @content;
+    }
+  } @else if $breakpoint == 'large-only' {
+    @media (min-width: $bp-large) and (max-width: $bp-large - 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'xlarge' {
+    @media (min-width: $bp-xlarge) {
+      @content;
+    }
+  } @else if $breakpoint == 'homepage-max' {
+    @media (min-width: $bp-homepage-max) {
+      @content;
+    }
+  } @else {
+    @error 'No value could be retrieved for ' + $breakpoint;
+  }
+}

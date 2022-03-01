@@ -1,0 +1,128 @@
+@import '../../../scss/__mixin';
+$max-mobile-trigger: 1250px;
+$six-column-min: 1251px;
+$six-column-max: 1420px;
+
+.team-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    flex: 1;
+    background: white;
+    transition: all 2s;
+    padding-top: var(--header-height);
+    .white-mask{
+        position: absolute;
+        top:0px;
+        height: var(--header-height);
+        width: 100vw;
+        z-index: 100;
+        background: white;
+    }
+    .title{
+        width: 100%;
+        text-align: center;
+        background: white;
+        z-index: 2;
+        img{
+            @include maxMedia($max-mobile-trigger){
+                height: 45px;
+            }
+        }
+        h1{
+            margin: 0px;
+            margin-bottom: 100px;
+            @include maxMedia($max-mobile-trigger){
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .team-list{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .team-row{
+            display: flex;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(500px);
+            transition: all 1.2s;
+            position: absolute;
+            top: 400px;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            justify-content: space-around;
+            max-width: calc(100vw - 100px);
+            height: calc(100vh - 350px);
+
+            @include maxMedia($max-mobile-trigger){
+                top: 240px;
+                padding-left: 0 !important;
+                height: calc(100vh - 200px);
+                max-width: none;
+            }
+
+            &.six-members .team-member{
+                @include minMaxMedia($six-column-min, $six-column-max){
+                    width: 160px;
+                    padding: 0px 10px;
+                    .header3{
+                        font-size: 18px;
+                    }
+                }
+            }
+            .team-member{
+                margin-bottom: 60px;
+                width: 180px;
+                padding: 0px 20px;
+
+                @include maxMedia($max-mobile-trigger){
+                    width: calc(50vw - 119px);
+                    padding: 0px 50px;
+                    max-width: 160px;
+                }
+                &.hide-description{
+                    .text-container {
+                        min-height: 95px;
+                        @include isMobile() {
+                            min-height: 65px;
+                        }
+                    }
+                }
+                &:last-of-type{
+                    margin-right: 0px;
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                    border-top-right-radius: 67px;
+                }
+                .text-container{
+                    min-height: 165px;
+                    @include isMobile() {
+                        min-height: 145px;
+                    }
+                    h3{
+                        margin:0px;
+                        font-size:20px;
+                        @include isMobile() {
+                            font-size: 15px;
+                        }
+                    }
+                    .description{
+                        font-size: 12px;
+                        @include isMobile() {
+                            font-size: 11px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

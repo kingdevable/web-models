@@ -1,0 +1,14 @@
+@import '../../scss/__mixin.scss';
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  --header-height: 100px;
+  --white-background: #F7F6F2;
+  --white-background-with-opacity: rgba(247, 246, 242, 0.5);
+  @include breakpoint(tablet-and-lower){
+    --header-height: 70px;
+  }
+}

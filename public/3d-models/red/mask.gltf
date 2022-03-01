@@ -1,0 +1,277 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 30762,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 6114,
+      "max": [
+        8.45573616027832,
+        179.72151184082,
+        -1.76487636566162
+      ],
+      "min": [
+        -8.45523262023926,
+        152.07861328125,
+        -12.725269317627
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 6114,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 6114,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 35784,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 7470,
+      "max": [
+        8.02242183685303,
+        152.165740966797,
+        6.09429693222046
+      ],
+      "min": [
+        -8.02242183685303,
+        131.745895385742,
+        -12.963963508606
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 7470,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 7470,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Adobe Substance 3D Painter 7.4.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 123048,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 73368,
+      "byteOffset": 123048,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 73368,
+      "byteOffset": 196416,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 48912,
+      "byteOffset": 269784,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 143136,
+      "byteOffset": 318696,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 89640,
+      "byteOffset": 461832,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 89640,
+      "byteOffset": 551472,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 59760,
+      "byteOffset": 641112,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 700872,
+      "uri": "ACCESSORIES_ONIMASKRED_07_007.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "ACCESSORIES_ONIMASKRED_07_007_MTL_baseColor.png"
+    },
+    {
+      "uri": "ACCESSORIES_ONIMASKRED_07_007_MTL_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "ACCESSORIES_ONIMASKRED_07_007_MTL_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "name": "ACCESSORIES_ONIMASKRED_07_007_MTL",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "mask",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Mask",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TEXCOORD_0": 7
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1,
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "grp_mask"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "mask"
+    },
+    {
+      "mesh": 0,
+      "name": "mask"
+    },
+    {
+      "children": [
+        5
+      ],
+      "name": "Mask",
+      "rotation": [
+        0.116354383528233,
+        0.0,
+        0.0,
+        0.99320775270462
+      ],
+      "translation": [
+        -2.91038304567337e-11,
+        37.1483688354492,
+        -47.6330757141113
+      ]
+    },
+    {
+      "children": [
+        6
+      ],
+      "name": "Mask"
+    },
+    {
+      "mesh": 1,
+      "name": "Mask"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}

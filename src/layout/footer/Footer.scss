@@ -1,0 +1,19 @@
+@import '../../scss/__mixin.scss';
+
+.app-footer{
+    position: fixed;
+    bottom:30px;
+    right:30px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.app-footer img{
+    transition: all 2s;
+    @include breakpoint(tablet-and-lower){
+        height: 25px;
+    }
+}

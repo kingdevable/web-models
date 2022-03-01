@@ -1,0 +1,21 @@
+.center-text{
+  position: absolute;
+  --height: 100px;
+  --width: 334px;
+  background: none;
+  font-size: 50px;
+  top: calc(50% - calc(var(--height) / 2));
+  left: calc(50% - calc(var(--width)/ 2));
+  color: #696969;
+  .neon-text{
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa;
+  }
+}
+
