@@ -106,14 +106,12 @@ class Model extends React.Component {
         const textureLoader = new THREE.TextureLoader( manager );
         
         //============ ground =======
-        const plane_geometry = new THREE.PlaneGeometry(500, 500);
+        const plane_geometry = new THREE.PlaneGeometry(1000, 500);
         textureLoader.load('https://rawgit.com/marcobiedermann/playground/master/three.js/smoke-particles/dist/assets/images/background.jpg', texture => {
             const plane_material = new THREE.MeshLambertMaterial({ blending: THREE.AdditiveBlending, color: 0xffffff, map: texture, opacity: 1,transparent: true });
             plane_material.map.minFilter = THREE.LinearFilter;
             const plane = new THREE.Mesh(plane_geometry, plane_material);
-            plane.position.z = -300;
-            // plane.rotateX(-3.141592 / 2);
-            // plane.position.set(0, -10, 0);
+            plane.position.z = -400;
             this.scene.add(plane);
         })
 
@@ -177,7 +175,7 @@ class Model extends React.Component {
             const smokeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff, map: _texture, transparent: true, alphaMap:_texture, opacity:0.5 });
             // const smokeMaterial = createMaterial(_texture);
             smokeMaterial.map.minFilter = THREE.LinearFilter;
-            const smokeGeometry = new THREE.PlaneBufferGeometry(250, 250);
+            const smokeGeometry = new THREE.PlaneBufferGeometry(500, 500);
             const smokeMeshes = [];
             let limit = 150;
             while (limit--) {
