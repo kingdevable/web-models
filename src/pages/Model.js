@@ -30,7 +30,7 @@ class Model extends React.Component {
             this.renderer.domElement
         );
         controls.target.set(0, 15, -43);
-        controls.enableRotate = true;
+        controls.enableRotate = false;
         controls.zoomSpeed = -1;
         controls.maxDistance = 150;
         controls.update();
