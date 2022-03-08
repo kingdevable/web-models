@@ -5,7 +5,7 @@ import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 // import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import "./Model.scss";
 
-const MAX_MASK_POSITION = -30;
+const MAX_MASK_POSITION = -36;
 
 class Model extends React.Component {
     componentDidMount() {
@@ -30,19 +30,19 @@ class Model extends React.Component {
             this.renderer.domElement
         );
         controls.target.set(0, 15, -43);
-        controls.enableRotate = false;
+        controls.enableRotate = true;
         controls.zoomSpeed = -1;
         controls.maxDistance = 150;
         controls.update();
         //========= light ==========
-        const ambient_light = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
+        const ambient_light = new THREE.AmbientLight(0xeeeeee, 0.5); // soft white light
         this.scene.add(ambient_light);
 
         const pointLight = new THREE.PointLight(0xeeeeee, 0.4);
         pointLight.position.set(0, 20, 20);
         this.scene.add(pointLight);
 
-        const spotLight_pink = new THREE.SpotLight(0xff00ff, 3, 150, 0.18);
+        const spotLight_pink = new THREE.SpotLight(0xdd00dd, 3, 150, 0.18);
         spotLight_pink.position.set(-40, 18, 11);
         const targetObject_pink = new THREE.Object3D();
         targetObject_pink.position.set(-4, 12, 0);
@@ -51,7 +51,7 @@ class Model extends React.Component {
         this.scene.add(spotLight_pink);
         this.scene.add(targetObject_pink);
 
-        const spotLight_yellow = new THREE.SpotLight(0xffff00, 3, 150, 0.18);
+        const spotLight_yellow = new THREE.SpotLight(0xdddd00, 3, 150, 0.18);
         spotLight_yellow.position.set(40, 18, 10);
         const targetObject_yellow = new THREE.Object3D();
         targetObject_yellow.position.set(4, 12, -1);
@@ -60,7 +60,7 @@ class Model extends React.Component {
         this.scene.add(spotLight_yellow);
         this.scene.add(targetObject_yellow);
 
-        const spotLight_white = new THREE.SpotLight(0xffffff, 1, 300, 0.5);
+        const spotLight_white = new THREE.SpotLight(0xdddddd, 1, 300, 0.5);
         spotLight_white.position.set(0, 60, 10);
         const targetObject_white = new THREE.Object3D();
         targetObject_white.position.set(0, 25, -70);
@@ -93,11 +93,11 @@ class Model extends React.Component {
 
         // ============= this.mask model=======
         this.loader.load(
-            "3d-models/red/mask.glb",
+            "3d-models/white/white_mask.glb",
             (gltf) => {
                 this.mask = gltf.scene.children[0];
-                this.mask.scale.set(1, 1, 1);
-                this.mask.position.set(0, -150, -10);
+                this.mask.scale.set(100, 100, 100);
+                this.mask.position.set(0, -150, -40);
                 this.scene.add(this.mask);
             },
             onProgress, onError 
