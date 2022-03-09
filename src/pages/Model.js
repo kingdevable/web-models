@@ -115,7 +115,7 @@ class Model extends React.Component {
             this.scene.add(plane);
         })
 
-        const texture1 = textureLoader.load( 'images/text1.png' );
+        const texture1 = textureLoader.load( 'images/text4.png' );
         const texture2 = textureLoader.load( 'images/text2.png' );
         const texture3 = textureLoader.load( 'images/text3.png' );
         const createMaterial = (_texture) => {            
@@ -145,7 +145,9 @@ class Model extends React.Component {
                     float r = texture2D(rgbTexture,vUv).r;
                     float g = texture2D(rgbTexture,vUv).y;
                     float b = texture2D(rgbTexture,vUv).z;
-                    float alpha = r*g*b;
+                    float alpha = 1.0;
+                    if(r == 0.0 && g >= 0.2 && b ==0.0)
+                        alpha = 0.0;
                     return vec4(r, g, b, alpha);
                 }
         
@@ -167,8 +169,8 @@ class Model extends React.Component {
         plane2.position.set(0,16.5,20)
         plane1.position.set(0,16.5,40)
         this.scene.add(plane1)
-        this.scene.add(plane2)
-        this.scene.add(plane3)
+        // this.scene.add(plane2)
+        // this.scene.add(plane3)
         
         this.smokeParticles = [];
         textureLoader.load('images/clouds.png', _texture => {
